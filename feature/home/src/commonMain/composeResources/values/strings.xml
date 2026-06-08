@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_app_name">KICKOFF 26</string>
+    <string name="home_tournament_starts_in">TOURNAMENT STARTS IN</string>
+    <string name="home_upcoming_matches">Upcoming Matches</string>
+    <string name="home_view_all">VIEW ALL</string>
+    <string name="home_group_label_template">Group %1$s</string>
+    <string name="home_group_standings">Group Standings</string>
+    <string name="home_live_label">LIVE</string>
+    <string name="home_kickoff_label_template">%1$s KICKOFF</string>
+    <string name="home_vs_label">VS</string>
+    <string name="home_error_title">Failed to load</string>
+    <string name="home_error_message">Could not fetch match data.</string>
+    <string name="home_standings_col_team">Team</string>
+    <string name="home_standings_col_played">P</string>
+    <string name="home_standings_col_won">W</string>
+    <string name="home_standings_col_drawn">D</string>
+    <string name="home_standings_col_lost">L</string>
+    <string name="home_standings_col_pts">Pts</string>
+</resources>

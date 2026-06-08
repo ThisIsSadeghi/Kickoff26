@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>KICKOFF 26 | Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&amp;family=Public+Sans:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: '#0A1209',
+              surface: '#141E12',
+              'surface-variant': '#1E3020',
+              'on-surface': '#E2EEDF',
+              'on-surface-variant': '#A5C0A0',
+              outline: '#5C7A5A',
+              'outline-variant': '#2E4A2C',
+              primary: '#86E8AB',
+              'on-primary': '#003919',
+              'primary-container': '#005227',
+              'on-primary-container': '#C8FFD7',
+              secondary: '#FFD700', // Trophy Gold
+              tertiary: '#4FC3F7', // Sky Blue
+              error: '#FFB4AB',
+              'on-error': '#690005'
+            },
+            borderRadius: {
+              'DEFAULT': '0.5rem',
+              'lg': '1rem',
+              'xl': '1.5rem',
+              '2xl': '20px'
+            },
+            fontFamily: {
+              headline: ['Outfit', 'sans-serif'],
+              display: ['Outfit', 'sans-serif'],
+              body: ['Outfit', 'sans-serif'],
+              label: ['Outfit', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #0A1209;
+            color: #E2EEDF;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(20, 30, 18, 0) 0%, rgba(10, 18, 9, 1) 100%), linear-gradient(45deg, #003919 0%, #141E12 100%);
+        }
+        .glass-card {
+            background: rgba(20, 30, 18, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300 px-4 h-16 flex items-center bg-background/40 backdrop-blur-sm">
+<div class="flex items-center gap-3">
+<h1 class="font-display font-black tracking-tighter text-xl text-primary uppercase">KICKOFF 26</h1>
+</div>
+</header>
+<main class="pt-4 px-4 space-y-6">
+<!-- Hero Section: Countdown -->
+<section class="relative h-[200px] w-full rounded-2xl overflow-hidden flex flex-col justify-end p-5 hero-gradient border border-outline-variant/30 mt-12">
+<div class="absolute inset-0 z-0 opacity-40">
+<img alt="Stadium" class="w-full h-full object-cover" data-alt="A cinematic low-angle shot of a massive futuristic soccer stadium at dusk. The pitch is vibrant stadium green, illuminated by powerful floodlights that create a dramatic contrast against the deep match-night black sky. Subtle atmospheric mist hangs in the air, catching the green and gold lighting. The style is hyper-realistic with a high-end sports broadcast aesthetic, emphasizing the scale and electric energy of a global tournament." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsqrK7bKZ1LHT3fhUfAdSyQP-sRldKXHHAzL5ZuVc5ByVuTRC-ggkPssRkAAImlWFvtUbyPUGa6P7HIlReT4ln2DgH2ZSz8x-R7FcI9kNwHqglwlkxAsVNkGSuAV1vQQ5apMzfe03jEbqXpZLZjDbdRbKZ94AGngijMosb1SVaj-vLl960cdErcmCQBCjTWBwoqBTzX2suFHeJltsiVEkPms1YMq12gKEWUMcI6iLkUDjYEBvZq-4zsjlUr1aLnYutPx7gI7LbO9-y"/>
+</div>
+<div class="relative z-10 space-y-3">
+<p class="text-[10px] font-bold tracking-[0.2em] text-on-surface-variant uppercase text-center">TOURNAMENT STARTS IN</p>
+<div class="flex items-center justify-center gap-6 text-secondary tabular-nums" id="countdown-container">
+<div class="flex flex-col items-center">
+<span class="text-4xl font-black" id="days">4D</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-4xl font-black" id="hours">11H</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-4xl font-black" id="minutes">23M</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-4xl font-black" id="seconds">52S</span>
+</div>
+</div>
+<div class="flex items-center justify-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-xs">calendar_today</span>
+<span>June 11, 2026 · Mexico City</span>
+</div>
+</div>
+</section>
+<!-- Upcoming Matches -->
+<section class="space-y-3">
+<div class="flex justify-between items-end">
+<h3 class="font-bold text-lg tracking-tight">Upcoming Matches</h3>
+<button class="text-primary text-xs font-semibold uppercase tracking-wider">View All</button>
+</div>
+<div class="flex overflow-x-auto hide-scrollbar gap-4 -mx-4 px-4 pb-2">
+<!-- Card 1: LIVE -->
+<div class="min-w-[280px] bg-surface rounded-xl p-4 border border-outline-variant/50 relative overflow-hidden group active:scale-[0.98] transition-transform">
+<div class="flex justify-between items-center mb-4">
+<span class="px-2 py-0.5 bg-surface-variant text-primary text-[10px] font-bold rounded-sm uppercase tracking-wider">GROUP A</span>
+<div class="flex items-center gap-1.5 px-2 py-0.5 bg-tertiary/10 rounded-full">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full animate-pulse"></span>
+<span class="text-tertiary text-[10px] font-black uppercase tracking-widest">● LIVE</span>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-2xl">🇲🇽</div>
+<span class="text-xs font-bold text-on-surface-variant uppercase">MEX</span>
+</div>
+<div class="flex flex-col items-center gap-1 flex-1">
+<span class="text-3xl font-black text-secondary">2 - 1</span>
+<span class="text-[10px] font-medium text-on-surface-variant">74'</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-2xl">🇳🇱</div>
+<span class="text-xs font-bold text-on-surface-variant uppercase">NED</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Upcoming -->
+<div class="min-w-[280px] bg-surface rounded-xl p-4 border border-outline-variant/50 relative overflow-hidden group opacity-80">
+<div class="flex justify-between items-center mb-4">
+<span class="px-2 py-0.5 bg-surface-variant text-on-surface-variant text-[10px] font-bold rounded-sm uppercase tracking-wider">GROUP B</span>
+<span class="text-on-surface-variant text-[10px] font-bold uppercase tracking-widest">20:00 KICKOFF</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-2xl">🇺🇸</div>
+<span class="text-xs font-bold text-on-surface-variant uppercase">USA</span>
+</div>
+<div class="flex flex-col items-center gap-1 flex-1 text-on-surface-variant">
+<span class="text-xl font-black">VS</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-2xl">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
+<span class="text-xs font-bold text-on-surface-variant uppercase">ENG</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Group Standings Section -->
+<section class="space-y-4">
+<h3 class="font-bold text-lg tracking-tight">Group Standings</h3>
+<!-- Horizontal Tabs -->
+<div class="flex overflow-x-auto hide-scrollbar gap-2 -mx-4 px-4 pb-1">
+<button class="px-4 py-2 bg-primary/10 text-primary border-b-2 border-primary text-xs font-bold whitespace-nowrap">Group A</button>
+<button class="px-4 py-2 text-on-surface-variant text-xs font-bold whitespace-nowrap">Group B</button>
+<button class="px-4 py-2 text-on-surface-variant text-xs font-bold whitespace-nowrap">Group C</button>
+<button class="px-4 py-2 text-on-surface-variant text-xs font-bold whitespace-nowrap">Group D</button>
+<button class="px-4 py-2 text-on-surface-variant text-xs font-bold whitespace-nowrap">Group E</button>
+<button class="px-4 py-2 text-on-surface-variant text-xs font-bold whitespace-nowrap">Group F</button>
+<button class="px-4 py-2 text-on-surface-variant text-xs font-bold whitespace-nowrap">Group G</button>
+<button class="px-4 py-2 text-on-surface-variant text-xs font-bold whitespace-nowrap">Group H</button>
+</div>
+<div class="bg-surface rounded-xl overflow-hidden border border-outline-variant/50">
+<table class="w-full text-left text-xs">
+<thead class="bg-surface-variant/50 text-on-surface-variant font-bold uppercase tracking-wider">
+<tr>
+<th class="px-4 py-3">Pos</th>
+<th class="px-2 py-3">Team</th>
+<th class="px-2 py-3 text-center">P</th>
+<th class="px-2 py-3 text-center">W</th>
+<th class="px-2 py-3 text-center">D</th>
+<th class="px-2 py-3 text-center">L</th>
+<th class="px-4 py-3 text-right">Pts</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<tr class="border-l-4 border-primary bg-primary/5">
+<td class="px-4 py-3 font-bold">1</td>
+<td class="px-2 py-3 font-bold flex items-center gap-2">
+<span class="text-base">🇲🇽</span> MEX
+                            </td>
+<td class="px-2 py-3 text-center">2</td>
+<td class="px-2 py-3 text-center">2</td>
+<td class="px-2 py-3 text-center">0</td>
+<td class="px-2 py-3 text-center">0</td>
+<td class="px-4 py-3 text-right font-black text-primary">6</td>
+</tr>
+<tr>
+<td class="px-4 py-3 text-on-surface-variant">2</td>
+<td class="px-2 py-3 flex items-center gap-2">
+<span class="text-base">🇳🇱</span> NED
+                            </td>
+<td class="px-2 py-3 text-center">2</td>
+<td class="px-2 py-3 text-center">1</td>
+<td class="px-2 py-3 text-center">0</td>
+<td class="px-2 py-3 text-center">1</td>
+<td class="px-4 py-3 text-right font-bold">3</td>
+</tr>
+<tr>
+<td class="px-4 py-3 text-on-surface-variant">3</td>
+<td class="px-2 py-3 flex items-center gap-2">
+<span class="text-base">🇸🇦</span> KSA
+                            </td>
+<td class="px-2 py-3 text-center">1</td>
+<td class="px-2 py-3 text-center">0</td>
+<td class="px-2 py-3 text-center">0</td>
+<td class="px-2 py-3 text-center">1</td>
+<td class="px-4 py-3 text-right font-bold">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-20 pb-safe bg-surface/90 backdrop-blur-md rounded-t-xl shadow-lg border-t border-outline-variant/30">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-primary font-bold scale-110 active:scale-100 transition-transform hover:text-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label text-[10px] uppercase tracking-wider mt-1">Home</span>
+</a>
+<!-- Matches -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant scale-110 active:scale-100 transition-transform hover:text-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined">sports_soccer</span>
+<span class="font-label text-[10px] uppercase tracking-wider mt-1">Matches</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant scale-110 active:scale-100 transition-transform hover:text-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label text-[10px] uppercase tracking-wider mt-1">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for the countdown
+        function updateCountdown() {
+            const now = new Date();
+            const seconds = 60 - now.getSeconds();
+            const sStr = seconds < 10 ? '0' + seconds : seconds;
+            
+            const secEl = document.getElementById('seconds');
+            if (secEl) {
+                secEl.innerText = `${sStr}S`;
+            }
+        }
+        setInterval(updateCountdown, 1000);
+
+        // Header transparency scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('bg-background/90', 'backdrop-blur-lg');
+                header.classList.remove('bg-background/40');
+            } else {
+                header.classList.remove('bg-background/90', 'backdrop-blur-lg');
+                header.classList.add('bg-background/40');
+            }
+        });
+    </script>
+</body></html>

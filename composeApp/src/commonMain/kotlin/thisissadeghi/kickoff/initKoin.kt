@@ -9,6 +9,7 @@ import org.koin.dsl.module
 import thisissadeghi.kickoff.common.di.commonModule
 import thisissadeghi.kickoff.data.config.BuildOptionProvider
 import thisissadeghi.kickoff.data.di.dataModule
+import thisissadeghi.kickoff.home.di.homeModule
 
 private val appModule =
     module {
@@ -22,5 +23,6 @@ fun initKoin(appDeclaration: KoinAppDeclaration = {}): KoinApplication =
             appModule,
             commonModule,
             dataModule,
+            homeModule,
         )
     }

@@ -45,6 +45,7 @@ kotlin {
             implementation(project(":core:data"))
             implementation(project(":core:common"))
             implementation(project(":core:designsystem"))
+            implementation(project(":feature:home"))
         }
     }
 }
@@ -71,13 +72,13 @@ buildkonfig {
 
     // Develop flavor
     defaultConfigs("develop") {
-        buildConfigField(STRING, "BASE_URL", "https://api.example.com/")
+        buildConfigField(STRING, "BASE_URL", "https://worldcup26.ir/")
         buildConfigField(STRING, "FLAVOR_NAME", "develop")
     }
 
     // Production flavor
     defaultConfigs("production") {
-        buildConfigField(STRING, "BASE_URL", "https://api.example.com/")
+        buildConfigField(STRING, "BASE_URL", "https://worldcup26.ir/")
         buildConfigField(STRING, "FLAVOR_NAME", "production")
     }
 }

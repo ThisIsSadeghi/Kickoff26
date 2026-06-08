@@ -2,13 +2,13 @@ package thisissadeghi.kickoff
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import thisissadeghi.kickoff.designsystem.XNavHost
+import thisissadeghi.kickoff.home.presentation.navigation.HomeRoute
+import thisissadeghi.kickoff.home.presentation.navigation.home
 
 /**
  * Main app navigation host.
- * Routes to WelcomeScreen until the first feature is wired in.
  */
 @Composable
 fun BaseAppNavHost(modifier: Modifier) {
@@ -17,8 +17,8 @@ fun BaseAppNavHost(modifier: Modifier) {
     XNavHost(
         modifier = modifier,
         navController = navController,
-        startDestination = WelcomeRoute,
+        startDestination = HomeRoute,
     ) {
-        composable<WelcomeRoute> { WelcomeScreen() }
+        home()
     }
 }

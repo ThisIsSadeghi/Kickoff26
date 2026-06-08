@@ -1,0 +1,22 @@
+{
+  "family": "Outfit",
+  "slug": "outfit",
+  "route": "github-variable",
+  "weights": [
+    400
+  ],
+  "css_url": "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Public+Sans:wght@400;700;900&display=swap",
+  "font_dir": "core/designsystem/src/commonMain/composeResources/font",
+  "files": [
+    "outfit_variable.ttf"
+  ],
+  "res_accessors": [
+    "outfit_variable"
+  ],
+  "font_family_lines": [
+    "Font(Res.font.outfit_variable, FontWeight.Normal, variationSettings = FontVariation.Settings(FontVariation.weight(400))),"
+  ],
+  "download_status": "pending",
+  "generator": "download_font.py",
+  "version": 1
+}

@@ -1,0 +1,96 @@
+{
+  "feature": "home",
+  "type": "icons",
+  "icons": [
+    {
+      "name": "calendar_today",
+      "style": "outlined",
+      "filled": false,
+      "scope": "domain",
+      "drawable_name": "calendar_today",
+      "extension": "xml",
+      "drawable_path": "feature/home/src/commonMain/composeResources/drawable/calendar_today.xml",
+      "res_reference": "Res.drawable.calendar_today",
+      "source_url": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/android/calendar_today/materialsymbolsoutlined/calendar_today_24px.xml",
+      "download_status": "downloaded",
+      "usage_count": 1,
+      "users": [
+        "home"
+      ],
+      "occurrences": [
+        {
+          "state": "success",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "home",
+      "style": "outlined",
+      "filled": true,
+      "scope": "domain",
+      "drawable_name": "home_fill",
+      "extension": "xml",
+      "drawable_path": "feature/home/src/commonMain/composeResources/drawable/home_fill.xml",
+      "res_reference": "Res.drawable.home_fill",
+      "source_url": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/android/home/materialsymbolsoutlined/home_fill1_24px.xml",
+      "download_status": "downloaded",
+      "usage_count": 1,
+      "users": [
+        "home"
+      ],
+      "occurrences": [
+        {
+          "state": "success",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "person",
+      "style": "outlined",
+      "filled": false,
+      "scope": "domain",
+      "drawable_name": "person",
+      "extension": "xml",
+      "drawable_path": "feature/home/src/commonMain/composeResources/drawable/person.xml",
+      "res_reference": "Res.drawable.person",
+      "source_url": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/android/person/materialsymbolsoutlined/person_24px.xml",
+      "download_status": "downloaded",
+      "usage_count": 1,
+      "users": [
+        "home"
+      ],
+      "occurrences": [
+        {
+          "state": "success",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "sports_soccer",
+      "style": "outlined",
+      "filled": false,
+      "scope": "domain",
+      "drawable_name": "sports_soccer",
+      "extension": "xml",
+      "drawable_path": "feature/home/src/commonMain/composeResources/drawable/sports_soccer.xml",
+      "res_reference": "Res.drawable.sports_soccer",
+      "source_url": "https://raw.githubusercontent.com/google/material-design-icons/master/symbols/android/sports_soccer/materialsymbolsoutlined/sports_soccer_24px.xml",
+      "download_status": "downloaded",
+      "usage_count": 1,
+      "users": [
+        "home"
+      ],
+      "occurrences": [
+        {
+          "state": "success",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "generator": "download_assets.py",
+  "version": 1
+}

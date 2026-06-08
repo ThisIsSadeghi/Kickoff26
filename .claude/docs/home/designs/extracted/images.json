@@ -1,0 +1,33 @@
+{
+  "feature": "home",
+  "type": "images",
+  "images": [
+    {
+      "role": "hero",
+      "state": "success",
+      "alt": "A cinematic low-angle shot of a massive futuristic soccer stadium at dusk. The pitch is vibrant stadium green, illuminated by powerful floodlights that create a dramatic contrast against the deep match-night black sky. Subtle atmospheric mist hangs in the air, catching the green and gold lighting. The style is hyper-realistic with a high-end sports broadcast aesthetic, emphasizing the scale and electric energy of a global tournament.",
+      "scope": "domain",
+      "drawable_name": "success_hero",
+      "extension": "png",
+      "drawable_path": "feature/home/src/commonMain/composeResources/drawable/success_hero.png",
+      "res_reference": "Res.drawable.success_hero",
+      "source_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCsqrK7bKZ1LHT3fhUfAdSyQP-sRldKXHHAzL5ZuVc5ByVuTRC-ggkPssRkAAImlWFvtUbyPUGa6P7HIlReT4ln2DgH2ZSz8x-R7FcI9kNwHqglwlkxAsVNkGSuAV1vQQ5apMzfe03jEbqXpZLZjDbdRbKZ94AGngijMosb1SVaj-vLl960cdErcmCQBCjTWBwoqBTzX2suFHeJltsiVEkPms1YMq12gKEWUMcI6iLkUDjYEBvZq-4zsjlUr1aLnYutPx7gI7LbO9-y",
+      "download_status": "downloaded",
+      "usage_count": 1,
+      "users": [
+        "home"
+      ],
+      "occurrences": [
+        {
+          "state": "success"
+        }
+      ],
+      "delivery": "bundled",
+      "delivery_confidence": "high",
+      "delivery_reason": "locked (user-confirmed in /ui-designer)",
+      "delivery_locked": true
+    }
+  ],
+  "generator": "download_assets.py",
+  "version": 1
+}
