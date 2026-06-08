@@ -5,17 +5,6 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.targets.jvm.KotlinJvmTarget
 
-buildscript {
-    configurations.all {
-        resolutionStrategy.eachDependency {
-            if (requested.group == "org.jetbrains" && requested.name == "annotations") {
-                useVersion("23.0.0")
-                because("AGP 9.2.1 requires annotations 23.0.0; overrides strict 13.0 from Kotlin plugin")
-            }
-        }
-    }
-}
-
 // Define SDK versions once at root
 val compileSdkVer: Int by lazy {
     libs.versions.android.compileSdk
