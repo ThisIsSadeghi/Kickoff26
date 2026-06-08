@@ -9,6 +9,9 @@ import thisissadeghi.kickoff.data.model.Balance
 class UserRepositoryImpl : UserRepository {
     override suspend fun getBalance(): Either<Balance> {
         // TODO: Implement balance fetching from remote data source when needed
-        return Either.Failure(thisissadeghi.kickoff.common.ErrorModel.Message("Balance API not implemented yet"))
+        return Either.Failure(
+            thisissadeghi.kickoff.common.ErrorModel
+                .Message("Balance API not implemented yet"),
+        )
     }
 }

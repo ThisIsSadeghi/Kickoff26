@@ -22,9 +22,9 @@ object XTheme {
 
     object Colors {
         // Semantic status colors — no M3 role equivalent
-        val Success = Color(0xFF4ADE80) // Income, savings progress, on-track budgets
-        val Danger = Color(0xFFFF6B6B) // Over-budget, expenses, overdue bills
-        val Bitcoin = Color(0xFFF7931A) // Bitcoin brand orange for coin icon bg
+        val Success = Color(0xFF4ADE80)
+        val Danger = Color(0xFFFF6B6B)
+        val Gold = Color(0xFFFFD700) // Trophy gold — highlights, winner badges, countdown accents
     }
 }
 
@@ -47,42 +47,68 @@ private val Shapes =
 
 internal val XLightColors =
     lightColorScheme(
-        primary = Color(0xFF6B5000),
+        primary = Color(0xFF00A651),
         onPrimary = Color(0xFFFFFFFF),
-        primaryContainer = Color(0xFFFDEDB5),
-        onPrimaryContainer = Color(0xFF221A00),
-        background = Color(0xFFFFFBF0),
-        surface = Color(0xFFFFFDF6),
-        onBackground = Color(0xFF1E1B10),
-        onSurface = Color(0xFF1E1B10),
-        onSurfaceVariant = Color(0xFF4E4730),
-        surfaceVariant = Color(0xFFEAE0C5),
-        outline = Color(0xFF7A7250),
-        outlineVariant = Color(0xFFCDC1A0),
+        primaryContainer = Color(0xFFCCEEDD),
+        onPrimaryContainer = Color(0xFF001F0A),
+        secondary = Color(0xFF7A6200),
+        onSecondary = Color(0xFFFFFFFF),
+        secondaryContainer = Color(0xFFFFE57A),
+        onSecondaryContainer = Color(0xFF261A00),
+        background = Color(0xFFF2FAF5),
+        surface = Color(0xFFF7FCF9),
+        onBackground = Color(0xFF091710),
+        onSurface = Color(0xFF091710),
+        onSurfaceVariant = Color(0xFF3A5441),
+        surfaceVariant = Color(0xFFD3ECDC),
+        surfaceContainer = Color(0xFFE8F5ED),
+        surfaceContainerHigh = Color(0xFFDEEFE5),
+        surfaceContainerHighest = Color(0xFFD4E9DC),
+        surfaceContainerLow = Color(0xFFEFF9F3),
+        surfaceContainerLowest = Color(0xFFF7FCF9),
+        outline = Color(0xFF587860),
+        outlineVariant = Color(0xFF9EC2A9),
         error = Color(0xFFB3261E),
         onError = Color(0xFFFFFFFF),
         errorContainer = Color(0xFFF9DEDC),
         onErrorContainer = Color(0xFF410E0B),
+        tertiary = Color(0xFF0284C7),
+        onTertiary = Color(0xFFFFFFFF),
+        tertiaryContainer = Color(0xFFBAE6FD),
+        onTertiaryContainer = Color(0xFF002232),
     )
 
 internal val XDarkColors =
     darkColorScheme(
-        primary = Color(0xFFF5D76E),
-        onPrimary = Color(0xFF2C1900),
-        primaryContainer = Color(0xFF4A3200),
-        onPrimaryContainer = Color(0xFFFFF0C0),
-        background = Color(0xFF0F0D09),
-        surface = Color(0xFF1C1910),
-        onBackground = Color(0xFFEDE8D5),
-        onSurface = Color(0xFFEDE8D5),
-        onSurfaceVariant = Color(0xFFC4BA94),
-        surfaceVariant = Color(0xFF302B1C),
-        outline = Color(0xFF726A48),
-        outlineVariant = Color(0xFF3F3822),
+        primary = Color(0xFF86E8AB),
+        onPrimary = Color(0xFF003919),
+        primaryContainer = Color(0xFF005227),
+        onPrimaryContainer = Color(0xFFC8FFD7),
+        secondary = Color(0xFFFFD700),
+        onSecondary = Color(0xFF3B2F00),
+        secondaryContainer = Color(0xFF564500),
+        onSecondaryContainer = Color(0xFFFFDF7B),
+        background = Color(0xFF0A1209),
+        surface = Color(0xFF141E12),
+        onBackground = Color(0xFFE2EEDF),
+        onSurface = Color(0xFFE2EEDF),
+        onSurfaceVariant = Color(0xFFA5C0A0),
+        surfaceVariant = Color(0xFF1E3020),
+        surfaceContainer = Color(0xFF192317),
+        surfaceContainerHigh = Color(0xFF1E2C1B),
+        surfaceContainerHighest = Color(0xFF243320),
+        surfaceContainerLow = Color(0xFF141E12),
+        surfaceContainerLowest = Color(0xFF0A1209),
+        outline = Color(0xFF5C7A5A),
+        outlineVariant = Color(0xFF2E4A2C),
         error = Color(0xFFFFB4AB),
         onError = Color(0xFF690005),
         errorContainer = Color(0xFF93000A),
         onErrorContainer = Color(0xFFFFDAD6),
+        tertiary = Color(0xFF4FC3F7),
+        onTertiary = Color(0xFF003547),
+        tertiaryContainer = Color(0xFF004D63),
+        onTertiaryContainer = Color(0xFFB8EAFF),
     )
 
 /**

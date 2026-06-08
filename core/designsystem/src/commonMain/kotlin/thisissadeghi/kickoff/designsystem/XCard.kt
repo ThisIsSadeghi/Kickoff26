@@ -7,10 +7,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardColors
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CardElevation
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.ReadOnlyComposable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
 
@@ -23,11 +20,11 @@ fun XCard(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
-    shape: Shape = XCardDefaults.CardShape,
+    shape: Shape = CardDefaults.shape,
     colors: CardColors = CardDefaults.cardColors(),
     elevation: CardElevation = CardDefaults.cardElevation(),
     border: BorderStroke? = null,
-    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
+    interactionSource: MutableInteractionSource? = null,
     content: @Composable ColumnScope.() -> Unit,
 ) {
     Card(
@@ -49,7 +46,7 @@ fun XCard(
 @Composable
 fun XCard(
     modifier: Modifier = Modifier,
-    shape: Shape = XCardDefaults.CardShape,
+    shape: Shape = CardDefaults.shape,
     colors: CardColors = CardDefaults.cardColors(),
     elevation: CardElevation = CardDefaults.cardElevation(),
     border: BorderStroke? = null,
@@ -63,11 +60,4 @@ fun XCard(
         border = border,
         content = content,
     )
-}
-
-object XCardDefaults {
-    internal val CardShape: Shape
-        @ReadOnlyComposable
-        @Composable
-        get() = MaterialTheme.shapes.medium
 }

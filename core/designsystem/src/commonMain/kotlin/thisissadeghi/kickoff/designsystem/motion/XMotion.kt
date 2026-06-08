@@ -19,6 +19,9 @@ object XMotion {
     const val ENTRANCE = 800
     const val AMBIENT = 15000
     const val VALUE = 1500
+    const val LIVE_PULSE = 1000
+    const val TICK = 300
+    const val INSTANT = 0
 
     // Easings (mapped from the verified Stitch vocabulary)
     val Standard: Easing = FastOutSlowInEasing // cubic-bezier(.4,0,.2,1)
