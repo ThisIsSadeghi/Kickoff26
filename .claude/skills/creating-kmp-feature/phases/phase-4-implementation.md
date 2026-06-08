@@ -156,6 +156,25 @@ If in **design-aware mode** (Phase 1 detected an unconsumed blueprint):
    **Pass the conflict list to the UI agent** as additional context alongside the blueprint.
 6. **Pass blueprint to UI agent**: Include the blueprint path, design screenshots, constraint conflict list, **the now-materialized icons and images manifests, the Typography Scale `M3 Role` mapping + any *Type-scale role overrides*, and the `## Motion` table (when present)** as context. For motion: the DS generic primitives are already created (step 4c); the agent writes only the feature-specific rows into `presentation/ui/motion/{Feature}Motion.kt`, calls the DS primitives for generic rows, gates every kept row with `rememberReducedMotion()`, and implements **no** interaction/hover motion. The UI agent emits every text node as `style = MaterialTheme.typography.{role}` (or an `XTextDefaults` preset) — never raw `fontSize`/`fontWeight` except where an override row applies (then `…typography.{role}.copy(...)`). The font itself is already wired globally in step 4b — the agent never sets `fontFamily`. The blueprint's Component Tree references icons and images by `res_reference`/`delivery` (e.g. `Res.drawable.qr_code_scanner`, `DesignSystemResources.drawable.arrow_back` for icons; for images: `bundled` → `Res.drawable.{name}`, `remote` → an `AsyncImage(url = {data_binding})` slot); the UI agent emits `XIcon(painter = painterResource({res_reference}))` for icons, `Image(painter = painterResource({res_reference}))` for `bundled` images, and `AsyncImage(url = {data_binding}, loadingResId = DesignSystemResources.drawable.ds_image_placeholder)` for `remote` images — exactly as declared. The blueprint's Component Tree is the primary source for UI implementation; design screenshots are visual cross-reference only.
 
+### 4d Pre-Agent Gate (design-aware mode — BLOCKING)
+
+> **This gate runs before any agent is spawned.** The orchestrator owns it — never delegate, never ask the user.
+
+In design-aware mode, re-read `.claude/docs/_project/stitch-project.json`. For each state where `features[{featurename}].states.{state} == true`:
+
+- If `sharedStateScreens.{state}.codeImplemented == true` → pass, continue.
+- If `false` or absent → **step 4d was skipped**. Execute 4d inline NOW:
+  1. Resolve `app/` dir from `stitch-project.json.designSystem.xthemePath` (replace filename with nothing, append `app/`).
+  2. Read `.claude/docs/_shared/designs/extracted/tokens_{state}.md`.
+  3. Rewrite `AppLoadingState.kt` (loading) or `AppErrorState.kt` (failed) to match the token inventory. Use only generic DS primitives; never import from `designsystem.app` itself; preserve the existing function signature, `modifier` param, and KDoc.
+  4. Set `sharedStateScreens.{state}.codeImplemented = true`, update `updatedAt`, write the file.
+  5. Build: `./gradlew :core:designsystem:assembleAndroidMain`.
+  6. Re-read `stitch-project.json` and assert `codeImplemented == true` — if still not true, STOP and repeat from step 3.
+
+Only after all selected states pass → proceed to Option A or B below.
+
+---
+
 ### Option A: Sequential Execution
 
 #### Step 1: Data Layer

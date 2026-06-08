@@ -1,0 +1,97 @@
+{
+  "projectId": "18114147449396774731",
+  "projectName": "projects/18114147449396774731",
+  "repoName": "Kickoff26",
+  "deviceType": "MOBILE",
+  "modelId": "GEMINI_3_FLASH",
+  "designSystem": {
+    "assetId": "1604713600502684340",
+    "name": "assets/1604713600502684340",
+    "colorMode": "DARK",
+    "sourceOfTruth": "XTheme.kt",
+    "xthemePath": "core/designsystem/src/commonMain/kotlin/thisissadeghi/kickoff/designsystem/XTheme.kt",
+    "syncedAt": "2026-06-07T00:00:00.000Z",
+    "themeSnapshot": {
+      "defaultTheme": "dark",
+      "primaryHex": "#00A651",
+      "paletteCustomized": true,
+      "light": {
+        "primary": "#00A651",
+        "background": "#F2FAF5",
+        "surface": "#F7FCF9",
+        "error": "#B3261E",
+        "onSurfaceVariant": "#3A5441"
+      },
+      "dark": {
+        "primary": "#86E8AB",
+        "background": "#0A1209",
+        "surface": "#141E12",
+        "error": "#FFB4AB",
+        "onSurfaceVariant": "#A5C0A0"
+      }
+    }
+  },
+  "sharedStateScreens": {
+    "loading": {
+      "screenId": "ef53350f9efa4d0aba80c868fe939e25",
+      "screenName": "projects/18114147449396774731/screens/ef53350f9efa4d0aba80c868fe939e25",
+      "screenshot": ".claude/docs/_shared/designs/loading.png",
+      "htmlPath": ".claude/docs/_shared/designs/extracted/stitch_loading.html",
+      "tokensPath": ".claude/docs/_shared/designs/extracted/tokens_loading.md",
+      "dimensions": { "width": 780, "height": 1768 },
+      "generatedAt": "2026-06-07T00:00:00.000Z",
+      "designSystemApplied": true,
+      "codeImplemented": false
+    },
+    "failed": {
+      "screenId": "669ad91d91974dffb7e34fa332d1c2f5",
+      "screenName": "projects/18114147449396774731/screens/669ad91d91974dffb7e34fa332d1c2f5",
+      "screenshot": ".claude/docs/_shared/designs/failed.png",
+      "htmlPath": ".claude/docs/_shared/designs/extracted/stitch_failed.html",
+      "tokensPath": ".claude/docs/_shared/designs/extracted/tokens_failed.md",
+      "dimensions": { "width": 780, "height": 1768 },
+      "generatedAt": "2026-06-07T00:00:00.000Z",
+      "designSystemApplied": true,
+      "codeImplemented": false
+    }
+  },
+  "features": {
+    "home": {
+      "successScreenId": "1c657134db2746fa95456c95fd220783",
+      "successScreenName": "projects/18114147449396774731/screens/1c657134db2746fa95456c95fd220783",
+      "emptyScreenId": null,
+      "states": {
+        "loading": true,
+        "failed": true,
+        "empty": false
+      },
+      "screenshot": "designs/home.png",
+      "htmlPath": "designs/extracted/stitch_success.html",
+      "tokensPath": "designs/extracted/tokens_success.md",
+      "dimensions": { "width": 780, "height": 1768 },
+      "designFile": "designs/home.md",
+      "blueprintFile": "designs/home_blueprint.md",
+      "blueprintConsumed": true,
+      "approved": true,
+      "approvedAt": "2026-06-07",
+      "createdAt": "2026-06-07T00:00:00.000Z",
+      "updatedAt": "2026-06-08T00:00:00.000Z",
+      "verification": {
+        "verified": true,
+        "verifiedAt": "2026-06-08",
+        "auditReport": "designs/home_audit.md",
+        "extractedSources": "designs/extracted/",
+        "xComponentsCompliant": false,
+        "criticalIssues": 3,
+        "attempts": 2
+      }
+    }
+  },
+  "initState": {
+    "projectCreated": true,
+    "designSystemCreated": true,
+    "completedAt": "2026-06-07T00:00:00.000Z"
+  },
+  "createdAt": "2026-06-07T00:00:00.000Z",
+  "updatedAt": "2026-06-08T12:00:00.000Z"
+}

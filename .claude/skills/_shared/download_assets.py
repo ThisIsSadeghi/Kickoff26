@@ -21,7 +21,9 @@ python3 download_assets.py --type icons|images \\
 ASSET TYPES
 -----------
 --type icons:
-  - Parses <span class="material-symbols-{outlined|rounded|sharp}" data-icon="name">
+  - Parses <span class="material-symbols-{outlined|rounded|sharp}" data-icon="name"> (attribute variant)
+    and <span class="material-symbols-{outlined|rounded|sharp}">name</span> (text-content variant, Stitch default)
+  - Filled detection: data-weight="fill" attribute OR font-variation-settings 'FILL' 1 inline style
   - Downloads XML vector drawables from google/material-design-icons
   - Applies KMP cleanup pass (strip android:tint, android:autoMirrored;
     translate EVERY @android:color/* ref — any color attribute — to literal
@@ -410,13 +412,21 @@ def _add_design_system_drawable_entry(source: str, ident: str, *, packages: Proj
 
 
 class _IconSpanFinder(HTMLParser):
-    """<span class="material-symbols-{style}" data-icon="..." [data-weight="fill"]>."""
+    """<span class="material-symbols-{style}" data-icon="..." [data-weight="fill"]>.
+
+    Supports two Stitch HTML variants:
+      - data-icon attribute:  <span class="material-symbols-outlined" data-icon="home">
+      - text content:         <span class="material-symbols-outlined">home</span>
+    Filled detection: data-weight="fill" attribute OR font-variation-settings 'FILL' 1 inline style.
+    """
 
     _CLASS_RE = re.compile(r"material-symbols-(outlined|rounded|sharp)")
+    _FILL_STYLE_RE = re.compile(r"'FILL'\s+1", re.IGNORECASE)
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.hits = []
+        self._pending = None  # set when inside a material-symbols span awaiting text content
 
     def handle_starttag(self, tag, attrs):
         if tag != "span":
@@ -425,14 +435,30 @@ class _IconSpanFinder(HTMLParser):
         m = self._CLASS_RE.search(attr_map.get("class", ""))
         if not m:
             return
+        style = m.group(1)
+        filled_by_attr = attr_map.get("data-weight", "").strip().lower() == "fill"
+        filled_by_style = bool(self._FILL_STYLE_RE.search(attr_map.get("style", "")))
+        filled = filled_by_attr or filled_by_style
+
         name = attr_map.get("data-icon", "").strip()
-        if not name:
+        if name:
+            # data-icon present — emit immediately
+            self.hits.append({"name": name, "style": style, "filled": filled})
+        else:
+            # text-content variant — wait for handle_data
+            self._pending = {"style": style, "filled": filled}
+
+    def handle_data(self, data):
+        if self._pending is None:
             return
-        self.hits.append({
-            "name": name,
-            "style": m.group(1),
-            "filled": attr_map.get("data-weight", "").strip().lower() == "fill",
-        })
+        name = data.strip()
+        if name:
+            self.hits.append({"name": name, **self._pending})
+        self._pending = None
+
+    def handle_endtag(self, tag):
+        if tag == "span":
+            self._pending = None
 
 
 class _ImgFinder(HTMLParser):

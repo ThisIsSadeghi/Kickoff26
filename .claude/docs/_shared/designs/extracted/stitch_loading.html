@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo+Narrow:wght@400;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#0d150c",
+                    "on-tertiary": "#2f3131",
+                    "surface-container-high": "#242c22",
+                    "on-error-container": "#ffdad6",
+                    "inverse-on-surface": "#2a3328",
+                    "outline-variant": "#3e4941",
+                    "surface-bright": "#333c30",
+                    "primary": "#bfffd2",
+                    "outline": "#889489",
+                    "surface-container-highest": "#2e372c",
+                    "on-primary": "#00391f",
+                    "tertiary": "#f0f0f0",
+                    "surface-variant": "#2e372c",
+                    "primary-fixed-dim": "#78da9e",
+                    "surface-dim": "#0d150c",
+                    "on-primary-fixed-variant": "#00522e",
+                    "on-secondary": "#223526",
+                    "on-secondary-fixed": "#0d1f12",
+                    "error-container": "#93000a",
+                    "error": "#ffb4ab",
+                    "primary-container": "#86e8ab",
+                    "secondary-container": "#384b3b",
+                    "inverse-primary": "#006d3f",
+                    "on-error": "#690005",
+                    "secondary-fixed": "#d2e8d3",
+                    "surface": "#0d150c",
+                    "secondary-fixed-dim": "#b6ccb7",
+                    "surface-container-lowest": "#081007",
+                    "surface-tint": "#78da9e",
+                    "on-primary-container": "#00693d",
+                    "on-primary-fixed": "#002110",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-tertiary-container": "#5a5b5c",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-background": "#dce5d6",
+                    "on-surface": "#dce5d6",
+                    "on-surface-variant": "#becabe",
+                    "surface-container": "#192218",
+                    "secondary": "#b6ccb7",
+                    "inverse-surface": "#dce5d6",
+                    "primary-fixed": "#94f7b9",
+                    "on-secondary-container": "#a5bba6",
+                    "surface-container-low": "#151e14",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-secondary-fixed-variant": "#384b3b",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "tertiary-container": "#d3d4d4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xl": "40px",
+                    "gutter": "20px",
+                    "margin-mobile": "16px",
+                    "sm": "8px",
+                    "container-max": "1280px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Anton"],
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Anton"],
+                    "body-lg": ["Archivo Narrow"],
+                    "body-md": ["Archivo Narrow"],
+                    "label-md": ["JetBrains Mono"],
+                    "headline-md": ["Anton"],
+                    "headline-lg": ["Anton"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #0d150c;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .spinner-container {
+            position: relative;
+            width: 48px;
+            height: 48px;
+        }
+
+        .spinner {
+            width: 100%;
+            height: 100%;
+            border: 4px solid rgba(134, 232, 171, 0.1);
+            border-top: 4px solid #86e8ab;
+            border-radius: 50%;
+            animation: spin 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            filter: drop-shadow(0 0 8px rgba(134, 232, 171, 0.4));
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Material Ripple effect for atmospheric feel */
+        .glow-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 64px;
+            height: 64px;
+            background: radial-gradient(circle, rgba(134, 232, 171, 0.15) 0%, rgba(13, 21, 12, 0) 70%);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; scale: 1; }
+            50% { opacity: 1; scale: 1.5; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background">
+<!-- 
+        Generic Mobile Loading State 
+        - Hierarchy: Suppressing all navigation elements (TopAppBar, BottomNavBar) per user instructions.
+        - Intent: Transactional/Focused waiting state.
+    -->
+<main class="flex flex-col items-center justify-center w-full h-full">
+<div class="spinner-container">
+<div class="glow-pulse"></div>
+<div class="spinner"></div>
+</div>
+</main>
+<script>
+        // Micro-interaction: Smooth entry animation for the spinner
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.spinner-container');
+            container.style.opacity = '0';
+            container.style.transform = 'scale(0.8)';
+            
+            setTimeout(() => {
+                container.style.transition = 'opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                container.style.opacity = '1';
+                container.style.transform = 'scale(1)';
+            }, 100);
+        });
+    </script>
+</body></html>

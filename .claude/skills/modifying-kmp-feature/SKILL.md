@@ -134,6 +134,14 @@ For UI changes: Load @../using-design-system/references/component-mappings.md
 
    See `@../creating-kmp-feature/architecture/ui.md` → "Previews" for the full pattern, including `@PreviewParameter` for multi-variant previews.
 
+**Shared-state screen gate (ALWAYS — runs in normal mode AND design-aware mode, before any code change):** Re-read `.claude/docs/_project/stitch-project.json`. For each state where `features[{featurename}].states.{state} == true`, check `sharedStateScreens.{state}.codeImplemented`. If `false` or absent — execute 1d inline NOW before touching any feature file:
+  1. Resolve `app/` dir from `stitch-project.json.designSystem.xthemePath` (replace filename, append `app/`).
+  2. Read `.claude/docs/_shared/designs/extracted/tokens_{state}.md`.
+  3. Rewrite `AppLoadingState.kt` (loading) or `AppErrorState.kt` (failed) to match the token inventory. Use only generic DS primitives; never import from `designsystem.app`; preserve existing function signature, `modifier` param, and KDoc.
+  4. Set `sharedStateScreens.{state}.codeImplemented = true`, update `updatedAt`, write the file.
+  5. Build: `./gradlew :core:designsystem:assembleAndroidMain`. Re-read and assert `codeImplemented == true` — if still not true, repeat from step 3.
+  Never ask the user. Never skip. Never delegate.
+
 **Design-aware branch**: If in design-aware mode, implement in this order:
 1. **XTheme update** — Add all missing M3 roles from the blueprint's Pre-Implementation Contract to **both** `XLightColors` and `XDarkColors` in `XTheme.kt`. Verify build: `./gradlew :core:designsystem:assembleAndroidMain`
 1b. **Typography update** — Read the blueprint's **Typography Updates Required** + `fonts.json`. Typography is app-global (lands in `:core:designsystem`). **Font swap** (only if a *Font swap* row exists): run `python3 .claude/skills/_shared/download_font.py --project-root {repo_root} --html .claude/docs/{featurename}/designs/extracted/stitch_success.html --manifest .claude/docs/{featurename}/designs/extracted/fonts.json` → downloads the `.ttf` set and prints the `Font(Res.font.*)` lines; replace `XFontFamily()`'s body in `XTheme.kt` with them (add `import androidx.compose.ui.text.font.FontVariation` for a variable route; follow the printed manual fallback on download failure). Verify build: `./gradlew :core:designsystem:assembleAndroidMain`. **Type-scale role overrides** are applied per-node in the feature (sub-step 3), not the theme. Skip 1b entirely when neither sub-table is present.
